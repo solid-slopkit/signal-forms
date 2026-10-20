@@ -1,5 +1,5 @@
 import { render, fireEvent } from '@solidjs/testing-library';
-import { createStore, flush } from 'solid-js';
+import { createSignal, createStore, flush, For } from 'solid-js';
 import { describe, expect, test } from 'vitest';
 
 import { form, control, disabled, readonly } from './index';
@@ -99,6 +99,24 @@ describe('control.select binding', () => {
     fireEvent.change(select, { target: { value: 'green' } });
     flush();
     expect(model.color).toBe('green');
+  });
+
+  test('options that arrive after the value still select it', () => {
+    const [model, setModel] = createStore({ color: 'green' });
+    const [colors, setColors] = createSignal<string[]>([]);
+    const { getByLabelText } = render(() => {
+      const f = form(model, setModel);
+      return (
+        <select aria-label="color" {...control.select(f.color)}>
+          <For each={colors()}>{(c) => <option value={c}>{c}</option>}</For>
+        </select>
+      );
+    });
+    const select = getByLabelText('color') as HTMLSelectElement;
+
+    setColors(['red', 'green']);
+    flush();
+    expect(select.value).toBe('green');
   });
 });
 
