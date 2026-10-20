@@ -79,9 +79,7 @@ npm view @solidjs/router versions --json | tail -5
 
 Pick the newest router version whose peer range accepts the target rc, not just the newest one. Read its changelog for breaking changes, such as route params becoming decoded. The docs app is the only user of the router here.
 
-This repo is part of the `@solid-slopkit` family:
-
-- **`@solid-slopkit/components`.** The docs app use the published version, and it has its own Solid peer range. That range must accept the target rc: `npm view @solid-slopkit/components@<installed version> peerDependencies`. If it doesn't, a newer components release is needed first; tell the user instead of forcing it. `pnpm-workspace.yaml` exempts `@solid-slopkit/components@0.1.0` from the release-age policy, so moving to a newer components version means updating that entry too.
+The tests and the docs app use the published `@solid-slopkit/components`, which has its own Solid peer range. That range must accept the target rc: `npm view @solid-slopkit/components@<installed version> peerDependencies`. If it doesn't, a newer components release is needed first; tell the user instead of forcing it. `pnpm-workspace.yaml` exempts `@solid-slopkit/components@0.1.0` from the release-age policy, so moving to a newer components version means updating that entry too.
 
 ## 4. Bump
 

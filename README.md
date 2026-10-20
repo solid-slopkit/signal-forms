@@ -2,7 +2,9 @@
 
 [`@solid-slopkit/signal-forms`](./packages/signal-forms): schema-driven, signal-based form state for SolidJS 2.x. A Solid store is the model, rules are attached to paths, and every field's state is a signal.
 
-[`apps/docs`](./apps/docs) is the documentation site, published at https://solid-slopkit.github.io/signal-forms/. [CONTEXT-MAP.md](./CONTEXT-MAP.md) explains how the package relates to the other `@solid-slopkit` packages, and [AGENTS.md](./AGENTS.md) is the guide for coding agents.
+**[Documentation and live examples →](https://solid-slopkit.github.io/signal-forms/)**
+
+[`apps/docs`](./apps/docs) is the source of the [documentation site](https://solid-slopkit.github.io/signal-forms/). [AGENTS.md](./AGENTS.md) is the guide for coding agents.
 
 ## Installing
 
@@ -42,7 +44,7 @@ An agent can run the whole release with the `release` skill (`.claude/skills/rel
 3. **Check it locally** (the workflow runs the same checks, so this only saves a round trip):
 
    ```bash
-   pnpm format:check && pnpm lint && pnpm release:check && pnpm -r --filter "./packages/*" typecheck && pnpm test
+   pnpm format:check && pnpm lint && pnpm release:check && pnpm --filter @solid-slopkit/signal-forms typecheck && pnpm test
    ```
 
 4. **Commit, tag and push.**

@@ -1,6 +1,6 @@
 # Signal forms (`@solid-slopkit/signal-forms`)
 
-Schema-driven form state for SolidJS 2.x: a Solid store holds the data, Logic Rules are attached to paths in a Schema, and a Field Tree exposes every field's state as signals. Terms shared by every package live in [CONTEXT-MAP.md](../../CONTEXT-MAP.md).
+Schema-driven form state for SolidJS 2.x: a Solid store holds the data, Logic Rules are attached to paths in a Schema, and a Field Tree exposes every field's state as signals.
 
 ## Language
 
@@ -98,3 +98,13 @@ _Avoid_: adapter, wrapper, accessor
 **Owner**:
 The Solid reactive owner a form's computations are registered under. A form created in a component is torn down with it; there is no explicit dispose.
 _Avoid_: scope, context
+
+### Agent docs
+
+**Skill**:
+A task-oriented guide for coding agents (`skills/<area>/SKILL.md`), shipped in the package.
+_Avoid_: guide, recipe
+
+**LLM reference**:
+Handwritten Markdown for agents next to the source, shipped in the package: one guide per topic. `llms.md` is the package's index.
+_Avoid_: llms.txt (that is only the index), API docs

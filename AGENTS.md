@@ -30,13 +30,12 @@ Use these whenever you are debugging reactivity (something doesn't update, updat
 
 Name your signals/memos/effects (the `{ name: "..." }` option) — attribution reports scopes by name.
 
-## Roadmap, decisions and vocabulary
+## Decisions and vocabulary
 
 Read only what your task touches:
 
-- `CONTEXT-MAP.md`: how this package relates to the other `@solid-slopkit` packages, the terms they share, and where repo-wide decisions are. Start here.
-- `packages/signal-forms/CONTEXT.md`: the package's vocabulary. Use its terms in code, docs and replies.
-- `packages/signal-forms/docs/adr/` and `docs/adr/`: architecture decisions for the package and for the whole family. Read the relevant ones before designing something, and don't silently go against one.
+- `packages/signal-forms/CONTEXT.md`: the package's vocabulary. Start here, and use its terms in code, docs and replies.
+- `docs/adr/`: the package's architecture decisions. Read the relevant ones before designing something, and don't silently go against one.
 
 ## This library stands alone
 

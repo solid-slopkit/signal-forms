@@ -4,7 +4,7 @@
  *
  * Public entry point.
  *
- * Vocabulary: ../CONTEXT.md — Decisions: ../docs/adr (0017–0022)
+ * Vocabulary: ../CONTEXT.md — Decisions: ../../../docs/adr (0017–0022)
  */
 
 export { form, submit } from './form';

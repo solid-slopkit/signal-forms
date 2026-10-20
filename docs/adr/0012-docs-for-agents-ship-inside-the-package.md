@@ -1,9 +1,9 @@
 # Docs for agents ship inside the package
 
-Each `@solid-slopkit/*` package contains two sets of docs written for coding agents, versioned with the code:
+`@solid-slopkit/signal-forms` contains two sets of docs written for coding agents, versioned with the code:
 
-- `skills/<area>/SKILL.md`: task-oriented guides (theming, layout, overlays, inputs), following the convention `solid-js` and `@solidjs/diagnostics` use. A consumer's AGENTS.md points at `node_modules/@solid-slopkit/<package>/skills/`.
-- **LLM references**: handwritten Markdown next to the source, plus an index, `llms.md`, at the source root. `@solid-slopkit/components` has one file per component and provider (`button/button/button.md`); `@solid-slopkit/signal-forms` and `@solid-slopkit/i18n` have one guide per topic (`guides/*.md`). The build copies them into `dist/source/` with the code, so the paths in the index work in the installed package. When a component's API changes, its reference changes in the same commit.
+- `skills/<area>/SKILL.md`: task-oriented guides (`skills/signal-forms/SKILL.md`), following the convention `solid-js` and `@solidjs/diagnostics` use. A consumer's AGENTS.md points at `node_modules/@solid-slopkit/signal-forms/skills/`.
+- **LLM references**: handwritten Markdown next to the source, plus an index, `llms.md`, at the source root. There is one guide per topic (`guides/*.md`). The build copies them into `dist/source/` with the code, so the paths in the index work in the installed package. When the API changes, its guide changes in the same commit.
 
 The docs site may stay private, so docs inside the package are often the only ones a consumer's agent can reach, and they always match the installed version.
 
