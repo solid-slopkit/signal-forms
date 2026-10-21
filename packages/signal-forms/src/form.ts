@@ -168,10 +168,15 @@ function buildStandardMap(results: readonly unknown[], path: readonly PathKey[])
  * leaves every other field's errors untouched) doesn't fan out to consumers. The
  * empty case already shares `NO_ERRORS`, so this only matters for stable non-empty
  * sets.
+ *
+ * Either side may be `undefined`: Solid can compare a memo's first computation
+ * against a previous value it never had (a lazy memo created inside a held
+ * transition and first read after it lands). No previous list is never equal
+ * to a computed one.
  */
-function errorsEqual(a: readonly ValidationError[], b: readonly ValidationError[]): boolean {
+function errorsEqual(a: readonly ValidationError[] | undefined, b: readonly ValidationError[] | undefined): boolean {
   if (a === b) return true;
-  if (a.length !== b.length) return false;
+  if (!a || !b || a.length !== b.length) return false;
   for (let i = 0; i < a.length; i++) {
     const x = a[i]!;
     const y = b[i]!;
