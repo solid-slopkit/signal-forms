@@ -1,5 +1,11 @@
 # @solid-slopkit/signal-forms
 
+## 0.2.1
+
+### Patch Changes
+
+- 29c62b7: Reading `$errors()` no longer throws `Cannot read properties of undefined (reading 'length')` when the form was created during a held transition, for example on a lazily loaded page that a guard redirects to during the first page load.
+
 ## 0.2.0
 
 ### Minor Changes
